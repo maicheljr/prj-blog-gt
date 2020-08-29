@@ -4,6 +4,13 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 
 # Create your models here.
+
+class PublicadosManager(models.Manager):
+    def get_queryset(self):
+        return super(PublicadosManager, self).get_queryset()\
+                                            .filter(status='publicado')
+
+
 class Post(models.Model):
     STATUS = (
         ('rascunho','Rascunho'),
@@ -23,11 +30,18 @@ class Post(models.Model):
                               choices=STATUS,
                               default='rascunho')# por default sempre vai para rascunho, alguém precisa publicar
 
+    # por default vai pegar todos os registros
+    object_list = models.Manager()
+
+
+    # se criar um Manager para pesquisa , necessariamente precisa setar o 'objects' antes, na sequência adicionar o Manager customizado
+    publicados = PublicadosManager() # como usar o MANAGER na view -> Post.publicados.all()
+
     class Meta:
         ordering = ['-publicado']
 
     def __str__(self):
-        # return '{} - {}'.format(self.titulo, self.conteudo)
+        # return '{} - {}'.format(self.titulo, self.conteudo) # concatenando string no return
         return self.titulo
 
 
