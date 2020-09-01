@@ -3,8 +3,10 @@
 {% block content %}
 
     {% for post in object_list %}
-        <h1>{{post.titulo}}</h1>
-        <h3>{{post.conteudo}} </h3>
+    <div class="post-entry">
+        <h2> <a href="{{ post.get_absolute_url }}"> {{post.titulo}}</a> </h2>
+        <p>{{post.conteudo}} </p>
+    </div>
     {% endfor %}
 
 {% endblock content %}

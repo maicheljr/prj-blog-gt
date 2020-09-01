@@ -2,6 +2,7 @@ from django.db import models
 
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 # Create your models here.
 
@@ -35,7 +36,10 @@ class Post(models.Model):
 
 
     # se criar um Manager para pesquisa , necessariamente precisa setar o 'objects' antes, na sequência adicionar o Manager customizado
-    publicados = PublicadosManager() # como usar o MANAGER na view -> Post.publicados.all()
+    publicados = PublicadosManager() # como usar o MANAGER na view -> Post.publicados.all()]
+
+    def get_absolute_url(self):
+        return reverse('detalhe-post', args=[self.pk])
 
     class Meta:
         ordering = ['-publicado']
