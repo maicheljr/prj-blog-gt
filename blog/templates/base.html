@@ -8,7 +8,14 @@
 </head>
 <body>
     <header>
-        <h1> <a href="/"> Home</a> </h1>
+        <div class="nav-left">
+
+            <h1> <a href="/"> Home</a> </h1>
+        </div>
+        <div class="nav-right">
+            <h1> <a href="{% url 'new-post' %}"> Novo Post</a> </h1>
+
+        </div>
     </header>
     <div class="container">
         {% block content %} {% endblock content %}

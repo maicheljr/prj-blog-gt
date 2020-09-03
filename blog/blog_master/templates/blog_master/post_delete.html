@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %} Apagar Postagem {% endblock title %}
+{% block content %}
+
+    <h1> Apagar Postagem </h1>
+
+    <form action="" method="post"> {% csrf_token %}
+        <p> Vc tem certeza q deseja apagar esse post "{{post.titulo}}" ??</p>
+
+
+        <input type="submit" value="Confirmar">
+
+    </form>
+
+
+{% endblock content %}
+

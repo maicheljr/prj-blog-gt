@@ -4,9 +4,12 @@
 
 
     <div class="post-entry">
-        <h2> <a href="#"> {{custom.titulo}}</a> </h2>
-        <p>{{custom.conteudo}} </p>
+        <h2>  {{object.titulo}} </h2>
+        <p>{{object.conteudo}} </p>
     </div>
+
+    <a href="{{ object.get_absolute_url_update }}">Editar</a><br>
+    <a href="{{ object.get_absolute_url_delete }}">Delete</a>
 
 
 {% endblock content %}
