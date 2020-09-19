@@ -1,24 +1,35 @@
 {% extends 'base.html' %}
 {% block title %} Nova Postagem {% endblock title %}
+{% load static %}
+{% block header %}
+<!-- Page Header -->
+  <header class="masthead" style="background-image: url({% static 'img/home-bg.jpg' %})">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h2>Blog Saúde Mental </h2>
+            <span class="subheading">Grupo de Trabalho</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+{% endblock header%}
 {% block content %}
+{% load bootstrap %}
 
-{% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-    {% endfor %}
-</ul>
-{% endif %}
-
-    <h1> Nova Postagem </h1>
-
-    <form action="" method="post">
-        {% csrf_token %}
-
-        {{form.as_p}}
-        <input type="submit" value="Salvar">
-
-    </form>
+    <div class="card">
+      <div class="card-body">
+        <h1> Nova Postagem </h1>
+        <form action="" method="post" enctype="multipart/form-data" >
+            {% csrf_token %}
+            {{form|bootstrap}}
+            <button type="submit" class="btn btn-primary"> Adicionar </button>
+        </form>
+      </div>
+    </div>
 
 
 {% endblock content %}

@@ -1,5 +1,22 @@
 {% extends 'base.html' %}
 {% block title %} Apagar Postagem {% endblock title %}
+{% load static %}
+{% block header %}
+<!-- Page Header -->
+  <header class="masthead" style="background-image: url({% static 'img/home-bg.jpg' %})">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h2>Blog Saúde Mental </h2>
+            <span class="subheading">Grupo de Trabalho</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+{% endblock header%}
 {% block content %}
 
     <h1> Apagar Postagem </h1>
@@ -8,7 +25,7 @@
         <p> Vc tem certeza q deseja apagar esse post "{{post.titulo}}" ??</p>
 
 
-        <input type="submit" value="Confirmar">
+        <input type="submit" value="Confirmar" class="btn btn-danger">
 
     </form>
 
