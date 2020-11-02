@@ -89,30 +89,36 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <ul class="list-inline text-center">
+            {% if Twitter %}
             <li class="list-inline-item">
-              <a href="#">
+              <a href="{{Twitter}}">
                 <span class="fa-stack fa-lg">
                   <i class="fas fa-circle fa-stack-2x"></i>
                   <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
                 </span>
               </a>
             </li>
+            {% endif %}
+            {% if Facebook %}
             <li class="list-inline-item">
-              <a href="#">
+              <a href="{{Facebook}}">
                 <span class="fa-stack fa-lg">
                   <i class="fas fa-circle fa-stack-2x"></i>
                   <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
                 </span>
               </a>
             </li>
+            {% endif %}
+            {% if Instagram %}
             <li class="list-inline-item">
-              <a href="#">
+              <a href="{{Instagram}}">
                 <span class="fa-stack fa-lg">
                   <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
                 </span>
               </a>
             </li>
+            {% endif %}
           </ul>
           <p class="copyright text-muted">Copyright &copy; Maichel Rosa 2020</p>
         </div>

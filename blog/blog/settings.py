@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'blog_master',
     'accounts',
     'social',
+    'contact',
 
 
 ]
@@ -74,6 +75,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social.processors.ctx_social',
             ],
         },
     },
@@ -153,3 +155,16 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_URL = '/static/'
+
+# EMAIL_HOST = 'smtp.mailtrap.io'
+# EMAIL_HOST_USER = '37d2830ce9b4de'
+# EMAIL_HOST_PASSWORD = 'ef08399cef6d2b'
+# EMAIL_PORT = '2525'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'maicheljr@gmail.com'
+EMAIL_HOST_PASSWORD = 'zhqquyiaqzlugfpy'
+
